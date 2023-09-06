@@ -3,17 +3,26 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T371660)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WinForms Lookup - Create cascading lookup editors 
+
+`LookUpEdit`, `GridLookUpEdit`, and `SearchLookUpEdit` controls can automatically filter their data sources based on a value in another lookup.
+
+Use the secondary lookup's [CascadingOwner](https://docs.devexpress.com/WindowsForms/DevExpress.XtraEditors.LookUpEditBase.CascadingOwner) property to specify the primary lookup. Lookups use an internal algorithm that identifies a key field in a data source. The algorithm checks the names of data objects, the key attributes, and the data type of the primary keys. The algorithm is based on a common naming convention of key fields (for example, `ID`, `Key`, and `OID`).
+
+Use the [CascadingMember](https://docs.devexpress.com/WindowsForms/DevExpress.XtraEditors.Repository.RepositoryItemLookUpEditBase.CascadingMember) property to manually specify a key field of the secondary lookup if the lookup's algorithm cannot identify a key field. Use the `;` character to delimit field names in a compound foreign key field.
+
+Read the following help topic for additional information: [Cascading Lookups](https://docs.devexpress.com/WindowsForms/116018/controls-and-libraries/editors-and-simple-controls/lookup-editors/cascading-lookups).
+
+
+## Files to Review
 
 * [DataProvider.cs](./CS/DXApplication1/DataProvider.cs) (VB: [DataProvider.vb](./VB/DXApplication1/DataProvider.vb))
-* **[Main.cs](./CS/DXApplication1/Main.cs) (VB: [Main.vb](./VB/DXApplication1/Main.vb))**
-<!-- default file list end -->
-# How to create cascading lookup editors 
+* [Main.cs](./CS/DXApplication1/Main.cs) (VB: [Main.vb](./VB/DXApplication1/Main.vb))
 
 
-This example illustrates how to filter drop-down items of one lookup editor based on a value in another lookup editor. It is possible to implement this functionality with a single code line. For this, we set the <strong>LookUpEditBase.CascadingOwner</strong> property of a child lookup control to a parent lookup control. Once you set this property, our inner mechanism will try to guess what cascading member is. That is, what child data field corresponds to a parent data field. The child drop-down list should be filtered against this found field. If the automatic algorithm does not recognize any related fields, you can specify such a field (or even fields) manually by using the<strong> RepositoryItemLookUpEditBase.CascadingMember</strong> property. <br><br>Note that this feature is in effect in <strong>Standalone Mode</strong> and it is applicable to <strong>LookUpEdit</strong>, <strong>GridLookUpEdit</strong>, and <strong>SearchLookUpEdit</strong>.<br><br>Review the <a href="https://documentation.devexpress.com/#WindowsForms/CustomDocument116018">Cascading Lookups</a> help article for more information in this regard. 
+## Documentation
 
-<br/>
-
-
+* [Cascading Lookups](https://docs.devexpress.com/WindowsForms/116018/controls-and-libraries/editors-and-simple-controls/lookup-editors/cascading-lookups)
+* [Lookup Main Settings](https://docs.devexpress.com/WindowsForms/116029/controls-and-libraries/editors-and-simple-controls/lookup-editors/lookup-editors-and-main-settings)
+* [WinForms Lookup Editors](https://docs.devexpress.com/WindowsForms/116008/controls-and-libraries/editors-and-simple-controls/lookup-editors)
