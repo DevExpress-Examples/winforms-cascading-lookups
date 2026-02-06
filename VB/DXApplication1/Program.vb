@@ -1,4 +1,6 @@
 Imports System
+Imports System.Collections.Generic
+Imports System.Linq
 Imports System.Windows.Forms
 Imports DevExpress.UserSkins
 Imports DevExpress.Skins
@@ -13,12 +15,12 @@ Namespace DXApplication1
         ''' </summary>
         <STAThread>
         Sub Main()
-            Call Application.EnableVisualStyles()
+            Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
-            Call BonusSkins.Register()
-            Call SkinManager.EnableFormSkins()
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style")
-            Call Application.Run(New Main())
+            BonusSkins.Register()
+            SkinManager.EnableFormSkins()
+            UserLookAndFeel.[Default].SetSkinStyle("DevExpress Style")
+            Application.Run(New Main())
         End Sub
     End Module
 End Namespace
